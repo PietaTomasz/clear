@@ -11,6 +11,13 @@ const rl = readline.createInterface({
 
 rl.on('line', (line) => {
   switch (line.trim()) {
+    case 'right':
+    case 'left':
+    case 'up':
+    case 'down':
+      Board.heroMove(line.trim());
+      Board.write();
+      break;
     default:
       Board.write();
       console.log(`Your input was '${line.trim()}'`);
